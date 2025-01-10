@@ -1,22 +1,62 @@
 # Text Classification using LLMs
 
-In this project, we want to try to develop advanced models for text classification.
-The goal is to do binary sentiment classification for each movie review. The reviews are classified into two categories (positive 1, negative - 0). For each review, we receive an identifier and the text. We would work on the training data (train.csv), and then make the predictions for the test data (test.csv).
+## Project Overview
+In this project, we aimed to develop advanced models for text classification, specifically binary sentiment classification for movie reviews. The reviews were categorized into two classes:
+- **Positive (1)**
+- **Negative (0)**
 
-### Datasets
-We have several data files for the project
+For each review, an identifier and the text were provided. Using the training data (`train.csv`), we trained our models and made predictions on the test data (`test.csv`).
 
-• train.csv: the training texts (id, label, text)
+---
 
-• test.csv: the test texts (id, text)
+## Datasets
+We utilized several files for the project:
 
-• vocab.txt - the valid vocabulary for the dataset (word)
+- **`train.csv`**: Contains the training data with the following columns:
+  - `id`: Unique identifier for each review
+  - `label`: Sentiment label (1 for positive, 0 for negative)
+  - `text`: The review text
 
-• sample.csv: a sample submission file in the correct format (id, label)
+- **`test.csv`**: Contains the test data with the following columns:
+  - `id`: Unique identifier for each review
+  - `text`: The review text
 
-### Conclusion on my contribution and findings
-1- We investigated multiple pre-trained models with a vast corpus and fine-tuned them for the sentiment analysis task (binary classification) of the dataset we were given. We tried BERT, DISTIL-BERT, ROBERTA, and ROBERTA LARGE. By using ROBERTA LARGE we achieved the highest accuracy for both model and also test set.
+- **`vocab.txt`**: The valid vocabulary for the dataset (one word per line).
 
-2- We also tried to work on tuning the hyperparameters. We played with learning rate, #epochs, and batch size to see how they affect the model performance! We tested multiple combinations of them and finally, It turned out that an epoch more than 5 or 6, is no longer much helpful. This was the same when increasing batch size after 16.
+- **`sample.csv`**: A sample submission file formatted as:
+  - `id`: Review identifier
+  - `label`: Predicted sentiment label
 
-3- Finally considering different pre-trained models and different combinations of hyperparameters tuning, we achieved close to 20 different models out of which We submitted 9 of them which resulted in achieving accuracy on the test set in the range of 87%, up to 95%.
+---
+
+## Approach and Implementation
+1. **Pre-trained Models**:
+   We explored multiple pre-trained language models and fine-tuned them for the sentiment analysis task. The models included:
+   - **BERT**
+   - **DISTIL-BERT**
+   - **ROBERTA**
+   - **ROBERTA LARGE**
+
+   Among these, **ROBERTA LARGE** achieved the highest accuracy on both the training and test datasets.
+
+2. **Hyperparameter Tuning**:
+   We experimented with various hyperparameters to optimize the model performance, including:
+   - Learning rate
+   - Number of epochs
+   - Batch size
+
+   **Key findings**:
+   - Increasing the number of epochs beyond 5 or 6 yielded minimal improvement.
+   - Increasing the batch size beyond 16 showed diminishing returns.
+
+3. **Model Evaluation**:
+   By combining different pre-trained models and hyperparameter configurations, we trained nearly 20 models. From these, we submitted predictions from 9 models, achieving test set accuracy in the range of **87% to 95%**.
+
+---
+
+## Conclusion
+Through the application of advanced language models and extensive hyperparameter tuning, we were able to:
+
+- Identify **ROBERTA LARGE** as the best-performing model for this dataset.
+- Understand the impact of various hyperparameter settings on model performance.
+- Achieve a high level of accuracy (up to **95%**) in sentiment classification for movie reviews.
